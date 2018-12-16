@@ -1,0 +1,2 @@
+gcloud compute ssh --ssh-flag="-L 8896:127.0.0.1:8896" --ssh-flag="-L 6006:127.0.0.1:6006" yqlin@instance-2 --zone=us-central1-c
+

@@ -1,0 +1,130 @@
+## Write your short answer questions in this file.
+## Simply replace the placeholders with your answers.
+
+## Your code will go elsewhere (either in a ipynb or py file).
+#  Where there are "YOUR CODE HERE" blocks, there exists a solution
+#  by only editing those lines.  No need to edit anything else.
+
+## Information Theory
+
+# Part A
+
+info_a1: log((0.1)/(0.2*0.8)) = log0.625 = -0.20411998265
+
+info_a2: log(0.002/(0.01*0.01)) = log20 = 1.30102999566
+info_a2_speculation: This metric is useful as it help to evaluate the probability to observe a word in context with another word compare to observing them independently.
+
+# Part B
+
+info_b1_1_128msg_num_bits: 7*128 = 896
+info_b1_2_128msg_entropy: 7
+info_b1_3_1024msg_num_bits: 10*1024 = 10240
+
+info_b2:
+- Second sentence
+# (keep the correct answer)
+
+info_b3:
+- N(0, 1)
+
+
+info_c1: -log(0.6498)= 0.187
+info_c2_1: In(1.25) = 0.2231
+info_c2_2: D(kl) is larger than cross entrophy.
+info_c3: We do not need to compute everything because the last number can be calculated as 1 minus the rest. 
+info_c4: 0.0
+info_c5: log(0), which is indefinitely large number
+info_c6: -log(4/27)
+
+## Dynamic Programming
+
+# Part A
+dp_a1: 2
+dp_a2: it is slow because it recurses so many times and its time complexity is growing exponentially.
+dp_a3: limit (not graded)
+
+# Part B
+dp_b1_A: 21
+dp_b1_B: 34
+dp_b1_C: 55
+
+# Part C
+dp_c1: This is a good way to partition a problem into smaller subproblems and building solution of larger problems from solutions of smaller problems.
+dp_c2: cutting the bar into 2 pieces with left piece as sub-problem of original one and right piece as a final piece for sell can cover all the cases of cutting.
+dp_c3:
+- 1
+- 4
+
+# (keep the correct answers)
+
+# Part D
+# For the next answers, write down the segmentation your best cuts with trace made.
+# For example, if 'helloworldhowareyou' segmented into the words you'd expect, your
+# answer would be as follows:
+#
+# dp_d_helloworldhowareyou:
+# - hello
+# - world
+# - how
+# - are
+# - you
+
+dp_d_helloworldhowareyou:
+# - hello
+# - world
+# - how
+# - are
+# - you
+
+
+dp_d_downbythebay:
+# - down
+# - by
+# - the
+# - bay
+
+dp_d_wikipediaisareallystrongresourceontheinternet:
+# - wikipedia
+# - is
+# - a
+# - really
+# - strong
+# - resource
+# - on
+# - the
+# - internet
+
+# Part E
+# (This section is optional, but if you want us to check your answers...)
+
+dp_e1: 0
+dp_e2: O(0)
+dp_e3: 0
+dp_e4: line goes here
+
+
+## TensorFlow
+
+# Part B
+
+tf_b_W_shape: 10x1
+tf_b_b_shape: 1x1
+
+# Part C
+
+tf_c_W_shape: 10x1
+tf_c_b_shape: 1x1
+tf_c_x_shape: 20x10
+tf_c_z_shape: 20x1
+
+# Part D
+
+tf_d_y_hat_shape: 20x1
+tf_d_y_hat_value: [[sigmoid(x1w+b)],[sigmoid(x2w+b)],...[sigmoid(x20w+b)]]
+tf_d_elementwise_description: sigmoid(vector) is applied elemnet-wise is because this function applies to every element inside the vector.
+
+# Part E
+tf_e_W_shape: 10x75
+tf_e_b_shape: 1x75
+tf_e_x_shape: 20x10
+tf_e_z_shape: 20x75

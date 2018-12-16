@@ -1,0 +1,110 @@
+## Write your short answers in this file, replacing the placeholders as appropriate.
+
+## Exploration ##
+#
+
+exploration_a_1_1_positive_fraction: 0.5216763005780347
+exploration_a_1_2_balanced: True
+exploration_a_1_3_common_class_accuracy: 0.5216763005780347
+
+exploration_a_2_common_tokens:
+- '.'
+- 'the'
+- ','
+- 'a'
+- 'and'
+
+exploration_a_3_percentile_length: 36.0
+exploration_a_4_problematic: It is probamatic because for longer sentences, we will repeat computing multiple times.
+
+exploration_b_2_most_negative: stupid
+exploration_b_2_most_negative_score: -3.17
+exploration_b_2_most_positive: powerful
+exploration_b_2_most_positive_score: 3.53
+exploration_b_2_make_sense: They make sense as positive words are used to describe people or things with positive objectives such as powerful and solid, while negative words are used to describe negative feelings or subjects.
+
+exploration_c_1_why_first_wrong: The first example is wrong because the probability for "fell short of" to be positive is 0.26, while the probabilities for "high standard" and "performance" are 0.65 and 0.77 to be positive. The whole sentence polarity is towarding positive tune.
+
+exploration_c_1_why_second_right: For the second example, if we separate "fell short of", "high standards", "performance", "painful", "incident", "thoughtful" from the two sentences, we can get a probabilities table like above. Only "painful" is slightly toward class 0 and all others are toward class 1.
+
+exploration_c_2_pattern: most of the interesting examples have both negative and positive words. They may have slightly positive or negative tunes. 
+
+exploration_c_2_subphrase_to_whole: The polarity of the sub-phrases will impact the whole sentence polarity. If most of the sub-phrases are strong toward positive and few towards negative, the whole sentence should be positive. This is not well-captured by a linear model.
+
+## Keep most common case
+#
+- Whole is positive, Subphrase is positive
+
+
+exploration_c_3_error_overall: 82.21%
+exploration_c_3_error_interesting: 73.26%
+exploration_c_3_error_increase: 50.31%
+
+## Neural Bag of Words ##
+#
+
+bow_d_1_w_embed: [Vxd]
+bow_d_1_w_0: [dxh1]
+bow_d_1_b_0: [h1x1]
+bow_d_1_w_1: [h1xh2]
+bow_d_1_b_1: [h2x1]
+bow_d_1_w_out: [h2xk]
+bow_d_1_b_out: [kx1]
+
+bow_d_2_parameters_embedding: V*d
+bow_d_2_parameters_hidden: d*h1+h1+h1*h2 + h2
+bow_d_2_parameters_output: h2*k+k
+
+bow_d_3_embed_dim: d
+bow_d_3_hidden_dims: [d, h1, h2, k]
+
+bow_d_4_same_predict: True
+bow_d_4_same_predict_why: yes, the model will make the same predictions as they do not consider orders.
+
+bow_f_2_interesting_accuracy: 71.51%
+bow_f_2_whole_test_accuracy: 77.38%
+bow_f_2_better_than_bayes: False
+bow_f_2_why: In Native Bayes, each phrase is independent. the polarity of the sub-phrases will impact the whole sentence polarity. This is not well-captured by a linear model. However, with a better tuning, the BOW model can perform better than Native Bayes.
+
+bow_f_3_more_training: NO, The model already converges
+bow_f_4_overfitting: False, the test accuracy is even better than training accuracy and test loss is smaller than training loss
+
+## Convolutional Neural Networks ##
+#
+
+# (Do not modify this section for now.)
+
+
+## ML Fairness ##
+#
+
+ml_racist_1_sentiment:  1.65489677
+
+ml_racist_2_bias_rank:
+# Most
+- Word2Vec
+- GloVe
+- Concept
+# Least
+
+ml_racist_3_technique:
+# Keep 
+- Debiasing Word Embeddings
+
+ml_debias_1_evidence: The analysis used w2vNEWS embedding to suggest that gender stereotype is prevalent. Figure 4 does not surprise me as it shows gender stereotypes is prevalent across both GloVe and w2vNEWS embeddings and is not an artifact of the particular training corpus or methodology of word2vec.
+
+ml_debias_2_table_1: The result of Table 1 is important because it shows the performance does not degrade after debiasing, which is the basis for the experiments in the latter part of this paper.
+
+ml_debias_3_stages: 
+- The first step, called identify gender subspace, is to identify a direction of the embedding that captures the bias. 
+
+- The second step, we define two options: Neutralize and Equalize or Soften. Neutralize ensures that gender neutral words are zero in the gender subspace. Equalize perfectly equalizes sets of words outside the subspace and thereby enforces the property that any Neutral word is equidistant to all words in each equality set.
+
+ml_debias_4: Once the subspace is found, we can use either hard de-biasing to neutralize and equalize the data or soft bias method to correct the bias.
+
+ml_adversarial_1_parity: Parity gap is a way to measure the independence between prediction Yˆ and sensitive attribute Z. the lower the better.
+
+ml_adversarial_2_equality: Equality gap is a way to measure whether embedding h is independent of Z, given Y=1
+
+ml_adversarial_3_j_lambda: it is an identity function with a negative gradient. It will help g() to maximize the classication error for Z.
+
